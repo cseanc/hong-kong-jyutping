@@ -52,7 +52,7 @@ module HtmlHelper
   # and return word details as hash
   def self.extract_word_details(link_to_word_details)
     webpage = open(link_to_word_details)
-    doc = Nokogiri::HTML(webpage, nil, Encoding::UTF_8.to_s)
+    doc = Nokogiri::HTML(webpage, nil, Encoding::Big5.to_s)
 
     # Second table, second row
     tables = doc.css('table')
@@ -79,7 +79,15 @@ module HtmlHelper
       word_details_hash = Hash.new
       word_details_hash[:sound] = sound
       word_details_hash[:tone] = tone.to_i
-      word_details_hash[:examples] = []
+      
+      # Get examples
+      examples_text = word_columns[5].css('div').first.text  # "的確, 目的, 一語中的[4..]"
+      if examples_text.include? '['
+        start_index = examples_text.index('[')
+        examples_text = examples_text[..start_index-1]
+      end
+      examples = examples_text.split(',').map(&:strip)
+      word_details_hash[:examples] = examples
 
       word_details_array << word_details_hash
     end
