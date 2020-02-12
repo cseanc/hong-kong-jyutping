@@ -16,41 +16,42 @@ After clicking on a word:
 Note that one word can have multiple pronunciations
 ```json
 {
-  "的": [
-    {
-      "sound": "dik",
-      "tone": 1,
-      "examples": []
-    }
-  ],
   "不": [
-    {
-      "sound": "bat",
-      "tone": 1,
-      "examples": []
-    },
-    {
-      "sound": "fau",
-      "tone": 2,
-      "examples": []
-    }
+      {
+          "sound": "bat",
+          "tone": 1,
+          "examples": [
+              "不然",
+              "不離不棄",
+              "一成不變"
+          ]
+      },
+      {
+          "sound": "fau",
+          "tone": 2,
+          "examples": []
+      }
   ],
   "了": [
-    {
-      "sound": "laa",
-      "tone": 1,
-      "examples": []
-    },
-    {
-      "sound": "liu",
-      "tone": 4,
-      "examples": []
-    },
-    {
-      "sound": "liu",
-      "tone": 5,
-      "examples": []
-    }
+      {
+          "sound": "laa",
+          "tone": 1,
+          "examples": []
+      },
+      {
+          "sound": "liu",
+          "tone": 4,
+          "examples": []
+      },
+      {
+          "sound": "liu",
+          "tone": 5,
+          "examples": [
+              "了斷",
+              "不得了",
+              "沒完沒了"
+          ]
+      }
   ]
 }
 ```
